@@ -22,7 +22,7 @@ class MediaData
             ]);
         }
 
-        $response = UrlFetcher::fetchJson(\Config::mediaApiBasePath() . '/file/' . $_GET['media'] . '/data?&token=' . $_SESSION['insecia_api_token']);
+        $response = UrlFetcher::fetchJson(\Config::mediaApiBasePath() . '/file/' . $_GET['media'] . '/data');
         if($reponse['status'] === 'OK') {
             $imageData = $response['message'];
 

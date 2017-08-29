@@ -33,7 +33,7 @@ class MediaBrowser
                         '%NAME%' => $directory['name'],
                         '%DESCRIPTION%' => $directory['description'],
                         '%DIR_ID%' => $directory['directoryID'],
-                        '%DIR_PICTURE_PATH%' => \Config::mediaApiBasePath() . '/file/' . $directory['mainPictureID'] . '/raw'
+                        '%DIR_PICTURE_PATH%' => \Config::mediaApiBasePath() . '/file/' . $directory['mainPictureID'] . '/raw?token=' . $_SESSION['insecia_api_token']
                     ]
                 );
 
@@ -54,7 +54,7 @@ class MediaBrowser
                     \Config::fileTemplate(), [
                         '%NAME%' => $file['name'],
                         '%DESCRIPTION%' => $file['description'],
-                        '%IMAGE_PATH%' => \Config::mediaApiBasePath() . '/file/' . $file['mediaID'] . '/raw?height=140',
+                        '%IMAGE_PATH%' => \Config::mediaApiBasePath() . '/file/' . $file['mediaID'] . '/raw?height=140&token=' . $_SESSION['insecia_api_token'],
                         '%MEDIA_ID%' => $file['mediaID']
                     ]
                 );
