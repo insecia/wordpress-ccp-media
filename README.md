@@ -146,6 +146,7 @@ This template is used to display the details of an image
 
 ### Login Form Template
 This template is used to provide a login form 
+(Link to registration form must be inserted)
 ```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <form id="inseciaLoginForm">
@@ -163,7 +164,7 @@ This template is used to provide a login form
     </div>
 </form><br />
 
-<a href="https://pmsg.inseciacloud.com">
+<a href="">
     <i class="fa fa fa-arrow-right"></i>
     Oder hier registrieren
 </a>
