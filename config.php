@@ -34,14 +34,9 @@ class Config {
         return get_option('file_template');
     }
 
-    public static function directoryTemplateStyle(): string 
+    public static function mediaBrowserStyle(): string 
     {
-        return get_option('directory_template_style');
-    }
-
-    public static function fileTemplateStyle(): string 
-    {
-        return get_option('file_template_style');
+        return get_option('media_browser_style');
     }
 
     public static function imageDetailsTemplate(): string 

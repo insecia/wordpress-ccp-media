@@ -18,8 +18,7 @@ add_action('admin_init', function() {
     register_setting('insecia-ccp-media-settings', 'root_directory_id');
     register_setting('insecia-ccp-media-settings', 'directory_template');
     register_setting('insecia-ccp-media-settings', 'file_template');
-    register_setting('insecia-ccp-media-settings', 'directory_template_style');
-    register_setting('insecia-ccp-media-settings', 'file_template_style');
+    register_setting('insecia-ccp-media-settings', 'media_browser_style');
     register_setting('insecia-ccp-media-settings', 'image_details_template');
     register_setting('insecia-ccp-media-settings', 'login_form_template');
 });
@@ -63,12 +62,8 @@ function insecia_ccp_media_page()
                     <td><textarea name="file_template" rows="10" cols="120"><?= esc_attr(get_option('file_template')) ?></textarea></td>
                 </tr>
                 <tr>
-                    <th>Directory Template Style</th>
-                    <td><textarea name="directory_template_style" rows="10" cols="120"><?= esc_attr(get_option('directory_template_style')) ?></textarea></td>
-                </tr>
-                <tr>
-                    <th>File Template Style</th>
-                    <td><textarea name="file_template_style" rows="10" cols="120"><?= esc_attr(get_option('file_template_style')) ?></textarea></td>
+                    <th>Media Browser Style</th>
+                    <td><textarea name="media_browser_style" rows="20" cols="120"><?= esc_attr(get_option('media_browser_style')) ?></textarea></td>
                 </tr>
                 <tr>
                     <th>Image Details Template</th>

@@ -13,8 +13,7 @@ class MediaBrowser
         $retContent = '';
         $retContent .= self::getDirectories($dirId);
         $retContent .= self::getFiles($dirId);
-        $retContent .= \Config::directoryTemplateStyle();
-        $retContent .= \Config::fileTemplateStyle();
+        $retContent .= \Config::mediaBrowserStyle();
         return $retContent;
     }
 
