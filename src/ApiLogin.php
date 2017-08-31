@@ -53,7 +53,7 @@ class ApiLogin
         return $this->errorType;
     }
 
-    public static function inseciaApiLogin() 
+    public static function inseciaApiLogin(): void
     {
         $user = $_POST['user'];
         $pass = $_POST['pass'];

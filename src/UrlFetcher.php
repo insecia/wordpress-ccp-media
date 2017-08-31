@@ -6,7 +6,8 @@ namespace Insecia\Api;
 
 class UrlFetcher 
 {
-    public static function fetchJson($url) {
+    public static function fetchJson($url): array
+    {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -21,7 +22,7 @@ class UrlFetcher
         if($content !== false) {
             return json_decode($content, true);
         } else {
-            return false;
+            return ['status' => 'NOK'];
         }
     }
 }

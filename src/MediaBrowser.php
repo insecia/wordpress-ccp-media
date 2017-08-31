@@ -15,8 +15,6 @@ class MediaBrowser
         $retContent .= self::getFiles($dirId);
         $retContent .= \Config::directoryTemplateStyle();
         $retContent .= \Config::fileTemplateStyle();
-        $retContent .= '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">';
-        $retContent .= '<div style="clear: both"></div>';
         return $retContent;
     }
 
@@ -30,8 +28,8 @@ class MediaBrowser
 
                 echo strtr(
                     \Config::directoryTemplate(), [
-                        '%NAME%' => $directory['name'],
-                        '%DESCRIPTION%' => $directory['description'],
+                        '%DIR_NAME%' => $directory['name'],
+                        '%DIR_DESCRIPTION%' => $directory['description'],
                         '%DIR_ID%' => $directory['directoryID'],
                         '%DIR_PICTURE_PATH%' => \Config::mediaApiBasePath() . '/file/' . $directory['mainPictureID'] . '/raw?token=' . $_SESSION['insecia_api_token']
                     ]
@@ -52,10 +50,13 @@ class MediaBrowser
 
                 echo strtr(
                     \Config::fileTemplate(), [
-                        '%NAME%' => $file['name'],
-                        '%DESCRIPTION%' => $file['description'],
+                        '%IMAGE_NAME%' => $file['name'],
+                        '%IMAGE_DESCRIPTION%' => $file['description'],
                         '%IMAGE_PATH%' => \Config::mediaApiBasePath() . '/file/' . $file['mediaID'] . '/raw?height=140&token=' . $_SESSION['insecia_api_token'],
-                        '%MEDIA_ID%' => $file['mediaID']
+                        '%MEDIA_ID%' => $file['mediaID'],
+                        '%FILE_SIZE%' => $file['fileSize'],
+                        '%FILE_TYPE%' => $file['fileType'],
+                        '%UPLOAD_DATE%' => $file['uploadDate']
                     ]
                 );
             }
@@ -66,6 +67,8 @@ class MediaBrowser
                 echo 'Sie haben keine ausreichenden Rechte, um diese Inhalte zu sehen.';
             } else if($content['message'] === 'token_expired') {
                 echo '<a href="beispielseite-login">Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an.</a>';
+            } else {
+                echo 'Ein unbekannter Fehler ist aufgetreten.';
             }
         }
         return ob_get_clean();

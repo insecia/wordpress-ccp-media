@@ -9,6 +9,7 @@ session_start();
 
 require_once 'src/ApiLogin.php';
 require_once 'src/UrlFetcher.php';
+require_once 'src/IptcFormatter.php';
 require_once 'src/MediaBrowser.php';
 require_once 'src/MediaData.php';
 require_once 'src/LoginForm.php';
