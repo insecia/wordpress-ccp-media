@@ -48,4 +48,19 @@ class Config {
     {
         return get_option('login_form_template');
     }
+
+    public static function tokenInvalidError(): string 
+    {
+        return get_option('error_token_invalid');
+    }
+
+    public static function noRightsError(): string 
+    {
+        return get_option('error_no_rights');
+    }
+
+    public static function tokenExpiredError(): string 
+    {
+        return get_option('error_token_expired');
+    }
 }

@@ -61,11 +61,11 @@ class MediaBrowser
             }
         } else {
             if($content['message'] === 'token_invalid') {
-                echo '<a href="beispielseite-login">Sie müssen sich anmelden, um diese Inhalte sehen zu können.</a>';
+                echo \Config::tokenInvalidError();
             } else if($content['message'] === 'no_rights') {
-                echo 'Sie haben keine ausreichenden Rechte, um diese Inhalte zu sehen.';
+                echo \Config::noRightsError();
             } else if($content['message'] === 'token_expired') {
-                echo '<a href="beispielseite-login">Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an.</a>';
+                echo \Config::tokenExpiredError();
             } else {
                 echo 'Ein unbekannter Fehler ist aufgetreten.';
             }

@@ -21,6 +21,9 @@ add_action('admin_init', function() {
     register_setting('insecia-ccp-media-settings', 'media_browser_style');
     register_setting('insecia-ccp-media-settings', 'image_details_template');
     register_setting('insecia-ccp-media-settings', 'login_form_template');
+    register_setting('insecia-ccp-media-settings', 'error_token_invalid');
+    register_setting('insecia-ccp-media-settings', 'error_no_rights');
+    register_setting('insecia-ccp-media-settings', 'error_token_expired');
 });
  
  
@@ -72,6 +75,18 @@ function insecia_ccp_media_page()
                 <tr>
                     <th>Login Form Template</th>
                     <td><textarea name="login_form_template" rows="20" cols="120"><?= esc_attr(get_option('login_form_template')) ?></textarea></td>
+                </tr>
+                <tr>
+                    <th>Token Invalid Error</th>
+                    <td><textarea name="error_token_invalid" rows="1" cols="120"><?= esc_attr(get_option('error_token_invalid')) ?></textarea></td>
+                </tr>
+                <tr>
+                    <th>No Rights Error</th>
+                    <td><textarea name="error_no_rights" rows="1" cols="120"><?= esc_attr(get_option('error_no_rights')) ?></textarea></td>
+                </tr>
+                <tr>
+                    <th>Token Expired Error</th>
+                    <td><textarea name="error_token_expired" rows="1" cols="120"><?= esc_attr(get_option('error_token_expired')) ?></textarea></td>
                 </tr>
 
                 <tr>
