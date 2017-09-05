@@ -53,8 +53,8 @@ class ApiLogin
 
     public static function inseciaApiLogin()
     {
-        $user = $_POST['user'];
-        $pass = $_POST['pass'];
+        $user = $_POST['insecia-ccp-media-user'];
+        $pass = $_POST['insecia-ccp-media-pass'];
 
         $apiLogin = self::forUser($user, $pass);
         $result = $apiLogin->login();
