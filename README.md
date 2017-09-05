@@ -13,6 +13,9 @@ Image Detail View: `[insecia_ccp_media_view][/insecia_ccp_media_view]` <br />
 Login Form: `[insecia_ccp_login][/insecia_ccp_login]`
 7. Change the links in the templates to whatever you decided to name your page
 
+## Requirements
+* PHP 7.1
+* cURL
 
 ## Templates
 ### Directory Template
