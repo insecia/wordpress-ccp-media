@@ -28,6 +28,16 @@ class Config {
         return get_option('insecia_ccp_media_login_page_url');
     }
 
+    public static function mediaBrowserPageUrl()
+    {
+        return get_option('insecia_ccp_media_media_browser_page_url');
+    }
+
+    public static function mediaViewPageUrl()
+    {
+        return get_option('insecia_ccp_media_media_view_page_url');
+    }
+
     public static function redirectAfterLoginUrl()
     {
         return get_option('insecia_ccp_media_redirect_after_login_url');
@@ -105,6 +115,8 @@ class Config {
     private static function parseSettingPlaceholders($template) {
         return strtr($template, [
             '%SETTING_LOGIN_PAGE_URL%' => self::loginPageUrl(),
+            '%SETTING_MEDIA_BROWSER_PAGE_URL%' => self::mediaBrowserPageUrl(),
+            '%SETTING_MEDIA_VIEW_PAGE_URL%' => self::mediaViewPageUrl(),
             '%SETTING_REDIRECT_AFTER_LOGIN_URL%' => self::redirectAfterLoginUrl(),
             '%SETTING_REGISTRATION_FORM_URL%' => self::registrationFormUrl()
         ]);

@@ -17,6 +17,8 @@ add_action('admin_init', function() {
     register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_project_id');
     register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_root_directory_id');
     register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_login_page_url');
+    register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_media_browser_page_url');
+    register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_media_view_page_url');
     register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_redirect_after_login_url');
     register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_registration_form_url');
 
@@ -60,6 +62,14 @@ function insecia_ccp_media_page()
                 <tr>
                     <th>Login Page URL</th>
                     <td><input type="text" name="insecia_ccp_media_login_page_url" value="<?= esc_attr(get_option('insecia_ccp_media_login_page_url')) ?>" size="50" /></td>
+                </tr>
+                <tr>
+                    <th>Media Browser Page URL</th>
+                    <td><input type="text" name="insecia_ccp_media_media_browser_page_url" value="<?= esc_attr(get_option('insecia_ccp_media_media_browser_page_url')) ?>" size="50" /></td>
+                </tr>
+                <tr>
+                    <th>Media View Page URL</th>
+                    <td><input type="text" name="insecia_ccp_media_media_view_page_url" value="<?= esc_attr(get_option('insecia_ccp_media_media_view_page_url')) ?>" size="50" /></td>
                 </tr>
                 <tr>
                     <th>Redirect After Login URL</th>

@@ -11,7 +11,7 @@ const MEDIA_DIRECTORY_TEMPLATE = <<<EOD
 EOD;
 
 const MEDIA_FILE_TEMPLATE = <<<EOD
-<a class='fileRow' href="beispielseite-bild?media=%MEDIA_ID%">
+<a class='fileRow' href="%SETTING_MEDIA_VIEW_PAGE_URL%?media=%MEDIA_ID%">
     <img src='%IMAGE_PATH%'>
     <p class='fileName'>%IMAGE_NAME%</p>
 </a>
