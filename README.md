@@ -14,7 +14,7 @@ Login Form: `[insecia_ccp_login][/insecia_ccp_login]`
 7. Change the links in the templates to whatever you decided to name your page
 
 ## Requirements
-* PHP 7.1
+* PHP 5.6
 * cURL
 
 ## Templates
