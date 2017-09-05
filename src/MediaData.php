@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 namespace Insecia\Api;
 
 class MediaData 
@@ -13,7 +11,7 @@ class MediaData
         'FIELD_KEYWORDS'
     ];
 
-    public static function getMediaData(): string
+    public static function getMediaData()
     {
         
         $imageDetailTemplate = \Config::imageDetailsTemplate();
@@ -26,7 +24,7 @@ class MediaData
         ]);
     }
 
-    private static function replaceIptcPlaceholders(string $imageDetailTemplate) :string 
+    private static function replaceIptcPlaceholders($imageDetailTemplate) 
     {
         $response = UrlFetcher::fetchJson(\Config::mediaApiBasePath() . '/file/' . $_GET['media'] . '/metadata/iptc');
 
@@ -34,7 +32,7 @@ class MediaData
             $iptcData = $response['message'];
 
             foreach(self::DISPLAYED_IPTC_FIELDS as $field) {
-                $iptcValue = $iptcData[$field]['value'] ?? null;
+                $iptcValue = isset($iptcData[$field]['value']) ? $iptcData[$field]['value'] : null;
 
                 $imageDetailTemplate = str_replace(
                     "%IPTC_{$field}%", 
@@ -47,7 +45,7 @@ class MediaData
         return $imageDetailTemplate;
     }
 
-    private static function replaceImageDataPlaceholders(string $imageDetailTemplate) :string 
+    private static function replaceImageDataPlaceholders($imageDetailTemplate) 
     {
         $response = UrlFetcher::fetchJson(\Config::mediaApiBasePath() . '/file/' . $_GET['media'] . '/data');
 

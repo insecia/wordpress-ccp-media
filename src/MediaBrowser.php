@@ -1,14 +1,12 @@
 <?php
 
-declare(strict_types = 1);
-
 namespace Insecia\Api;
 
 class MediaBrowser 
 {
-    public static function getMediaBrowser(): string 
+    public static function getMediaBrowser()
     {
-        $dirId = (int)($_GET['parent'] ?? \Config::rootDirectoryId());
+        $dirId = (int)(isset($_GET['parent']) ? $_GET['parent'] : \Config::rootDirectoryId());
 
         $retContent = '';
         $retContent .= self::getDirectories($dirId);
@@ -17,7 +15,7 @@ class MediaBrowser
         return $retContent;
     }
 
-    private static function getDirectories(int $dirId): string
+    private static function getDirectories($dirId)
     {
         $content = UrlFetcher::fetchJson(\Config::mediaApiBasePath() . '/directories/' . $dirId);
 
@@ -39,7 +37,7 @@ class MediaBrowser
         return ob_get_clean();
     }
 
-    private static function getFiles(int $dirId): string 
+    private static function getFiles($dirId) 
     {
         $content = UrlFetcher::fetchJson(\Config::mediaApiBasePath() . '/directory/' . $dirId . '/files');
 

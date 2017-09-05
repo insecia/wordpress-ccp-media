@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types = 1);
-
 namespace Insecia\Api;
 
 class UrlFetcher 
 {
-    public static function fetchJson($url): array
+    public static function fetchJson($url)
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);

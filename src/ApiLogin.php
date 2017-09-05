@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types = 1);
-
 namespace Insecia\Api;
 
 class ApiLogin 
@@ -13,7 +11,7 @@ class ApiLogin
     private $pass = null;
     private $errorType = null;
 
-    public static function forUser($user, $pass): ApiLogin
+    public static function forUser($user, $pass)
     {
         $instance = new self();
         $instance->user = $user;
@@ -21,7 +19,7 @@ class ApiLogin
         return $instance;
     }
 
-    public function login(): ?bool
+    public function login()
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, \Config::apiBasePath() . '/authentication/token');
@@ -48,12 +46,12 @@ class ApiLogin
         }
     }
 
-    public function getError(): ?int
+    public function getError()
     {
         return $this->errorType;
     }
 
-    public static function inseciaApiLogin(): void
+    public static function inseciaApiLogin()
     {
         $user = $_POST['user'];
         $pass = $_POST['pass'];

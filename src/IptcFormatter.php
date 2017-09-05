@@ -1,12 +1,11 @@
 <?php
 
-declare(strict_types = 1);
-
 namespace Insecia\Api;
 
 class IptcFormatter {
 
-    public static function format($tag, $value) {
+    public static function format($tag, $value) 
+    {
         switch($tag) {
             case 'FIELD_DATE_CREATED': 
                 return date('d.m.Y', strtotime($value[0]));
