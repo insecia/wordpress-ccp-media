@@ -13,17 +13,17 @@ add_action('admin_menu', function() {
  
  
 add_action('admin_init', function() {
-    register_setting('insecia-ccp-media-settings', 'api_base_path');
-    register_setting('insecia-ccp-media-settings', 'project_id');
-    register_setting('insecia-ccp-media-settings', 'root_directory_id');
-    register_setting('insecia-ccp-media-settings', 'directory_template');
-    register_setting('insecia-ccp-media-settings', 'file_template');
-    register_setting('insecia-ccp-media-settings', 'media_browser_style');
-    register_setting('insecia-ccp-media-settings', 'image_details_template');
-    register_setting('insecia-ccp-media-settings', 'login_form_template');
-    register_setting('insecia-ccp-media-settings', 'error_token_invalid');
-    register_setting('insecia-ccp-media-settings', 'error_no_rights');
-    register_setting('insecia-ccp-media-settings', 'error_token_expired');
+    register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_api_base_path');
+    register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_project_id');
+    register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_root_directory_id');
+    register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_directory_template');
+    register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_file_template');
+    register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_media_browser_style');
+    register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_image_details_template');
+    register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_login_form_template');
+    register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_error_token_invalid');
+    register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_error_no_rights');
+    register_setting('insecia-ccp-media-settings', 'insecia_ccp_media_error_token_expired');
 });
  
  
@@ -34,23 +34,23 @@ function insecia_ccp_media_page()
         <h1>Insecia CCP Media</h1> <hr><br />
         <form action="options.php" method="post">
             <?php
-            settings_fields( 'insecia-ccp-media-settings' );
-            do_settings_sections( 'insecia-ccp-media-settings' );
+            settings_fields('insecia-ccp-media-settings');
+            do_settings_sections('insecia-ccp-media-settings');
             ?>
 
             <h2><i>General</i></h2><hr>
             <table>
                 <tr>
                     <th>Api Base Path</th>
-                    <td><input type="text" name="api_base_path" value="<?= esc_attr(get_option('api_base_path')) ?>" size="50" /></td>
+                    <td><input type="text" name="insecia_ccp_media_api_base_path" value="<?= esc_attr(get_option('insecia_ccp_media_api_base_path')) ?>" size="50" /></td>
                 </tr>
                 <tr>
                     <th>Project ID</th>
-                    <td><input type="number" min="1" name="project_id" value="<?= get_option('project_id') ?>" /></td>
+                    <td><input type="number" min="1" name="insecia_ccp_media_project_id" value="<?= get_option('insecia_ccp_media_project_id') ?>" /></td>
                 </tr>
                 <tr>
                     <th>Root Directory ID</th>
-                    <td><input type="number" min="1" name="root_directory_id" value="<?= get_option('root_directory_id') ?>" /></td>
+                    <td><input type="number" min="1" name="insecia_ccp_media_root_directory_id" value="<?= get_option('insecia_ccp_media_root_directory_id') ?>" /></td>
                 </tr>
             </table> <br />
 
@@ -58,35 +58,35 @@ function insecia_ccp_media_page()
             <table>
                 <tr>
                     <th>Directory Template</th>
-                    <td><textarea name="directory_template" rows="10" cols="120"><?= esc_attr(get_option('directory_template')) ?></textarea></td>
+                    <td><textarea name="insecia_ccp_media_directory_template" rows="10" cols="120"><?= esc_attr(get_option('insecia_ccp_media_directory_template')) ?></textarea></td>
                 </tr>
                 <tr>
                     <th>File Template</th>
-                    <td><textarea name="file_template" rows="10" cols="120"><?= esc_attr(get_option('file_template')) ?></textarea></td>
+                    <td><textarea name="insecia_ccp_media_file_template" rows="10" cols="120"><?= esc_attr(get_option('insecia_ccp_media_file_template')) ?></textarea></td>
                 </tr>
                 <tr>
                     <th>Media Browser Style</th>
-                    <td><textarea name="media_browser_style" rows="20" cols="120"><?= esc_attr(get_option('media_browser_style')) ?></textarea></td>
+                    <td><textarea name="insecia_ccp_media_media_browser_style" rows="20" cols="120"><?= esc_attr(get_option('insecia_ccp_media_media_browser_style')) ?></textarea></td>
                 </tr>
                 <tr>
                     <th>Image Details Template</th>
-                    <td><textarea name="image_details_template" rows="20" cols="120"><?= esc_attr(get_option('image_details_template')) ?></textarea></td>
+                    <td><textarea name="insecia_ccp_media_image_details_template" rows="20" cols="120"><?= esc_attr(get_option('insecia_ccp_media_image_details_template')) ?></textarea></td>
                 </tr>
                 <tr>
                     <th>Login Form Template</th>
-                    <td><textarea name="login_form_template" rows="20" cols="120"><?= esc_attr(get_option('login_form_template')) ?></textarea></td>
+                    <td><textarea name="insecia_ccp_media_login_form_template" rows="20" cols="120"><?= esc_attr(get_option('insecia_ccp_media_login_form_template')) ?></textarea></td>
                 </tr>
                 <tr>
                     <th>Token Invalid Error</th>
-                    <td><textarea name="error_token_invalid" rows="1" cols="120"><?= esc_attr(get_option('error_token_invalid')) ?></textarea></td>
+                    <td><textarea name="insecia_ccp_media_error_token_invalid" rows="1" cols="120"><?= esc_attr(get_option('insecia_ccp_media_error_token_invalid')) ?></textarea></td>
                 </tr>
                 <tr>
                     <th>No Rights Error</th>
-                    <td><textarea name="error_no_rights" rows="1" cols="120"><?= esc_attr(get_option('error_no_rights')) ?></textarea></td>
+                    <td><textarea name="insecia_ccp_media_error_no_rights" rows="1" cols="120"><?= esc_attr(get_option('insecia_ccp_media_error_no_rights')) ?></textarea></td>
                 </tr>
                 <tr>
                     <th>Token Expired Error</th>
-                    <td><textarea name="error_token_expired" rows="1" cols="120"><?= esc_attr(get_option('error_token_expired')) ?></textarea></td>
+                    <td><textarea name="insecia_ccp_media_error_token_expired" rows="1" cols="120"><?= esc_attr(get_option('insecia_ccp_media_error_token_expired')) ?></textarea></td>
                 </tr>
 
                 <tr>

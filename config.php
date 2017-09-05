@@ -3,12 +3,12 @@
 class Config {
     public static function projectId()
     {
-        return (int)get_option('project_id');
+        return (int)get_option('insecia_ccp_media_project_id');
     }
 
     public static function apiBasePath()
     {
-        return get_option('api_base_path');
+        return get_option('insecia_ccp_media_api_base_path');
     }
 
     public static function mediaApiBasePath()
@@ -18,46 +18,46 @@ class Config {
 
     public static function rootDirectoryId()
     {
-        return (int)get_option('root_directory_id');
+        return (int)get_option('insecia_ccp_media_root_directory_id');
     }
 
     public static function directoryTemplate()
     {
-        return get_option('directory_template');
+        return get_option('insecia_ccp_media_directory_template');
     }
 
     public static function fileTemplate()
     {
-        return get_option('file_template');
+        return get_option('insecia_ccp_media_file_template');
     }
 
     public static function mediaBrowserStyle()
     {
-        return get_option('media_browser_style');
+        return get_option('insecia_ccp_media_media_browser_style');
     }
 
     public static function imageDetailsTemplate()
     {
-        return get_option('image_details_template');
+        return get_option('insecia_ccp_media_image_details_template');
     }
 
     public static function loginFormTemplate()
     {
-        return get_option('login_form_template');
+        return get_option('insecia_ccp_media_login_form_template');
     }
 
     public static function tokenInvalidError()
     {
-        return get_option('error_token_invalid');
+        return get_option('insecia_ccp_media_error_token_invalid');
     }
 
     public static function noRightsError()
     {
-        return get_option('error_no_rights');
+        return get_option('insecia_ccp_media_error_no_rights');
     }
 
     public static function tokenExpiredError()
     {
-        return get_option('error_token_expired');
+        return get_option('insecia_ccp_media_error_token_expired');
     }
 }
